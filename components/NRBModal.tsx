@@ -3,23 +3,24 @@ import React, { useEffect, useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
 
 type BtModalProps = {
-    title:string | undefined,
-    body: string | undefined
+    title: string | undefined,
+    body?: string | undefined
     show: boolean | undefined,
     closeModal: React.MouseEventHandler<HTMLButtonElement> | undefined,
     saveBtnClick: React.MouseEventHandler<HTMLButtonElement> | undefined,
-    hide:any,
+    hide: any,
+    children: React.ReactNode
 
 }
 
-const ReactBootstrapModal = (props: BtModalProps) => {
+const NRBModal = (props: BtModalProps) => {
 
     return (
         <Modal show={props.show} onHide={props.hide} backdrop='static' keyboard={false} >
             <Modal.Header closeButton>
                 <Modal.Title>{props.title}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{props.body}</Modal.Body>
+            <Modal.Body>{props.body ? (props.body):(props.children)}</Modal.Body> 
             <Modal.Footer>
                 <Button variant="secondary" onClick={props.closeModal}>
                     Close
@@ -32,4 +33,4 @@ const ReactBootstrapModal = (props: BtModalProps) => {
     )
 }
 
-export default ReactBootstrapModal
+export default NRBModal
