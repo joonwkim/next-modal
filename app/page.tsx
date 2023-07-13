@@ -20,7 +20,7 @@ export default function Page() {
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>handleShow()}>
         Launch demo modal
       </button>
-      <ReactBootstrapModal title='Test Modal' body="Wow it's a bootstrap react modal" show={show} closeModal={handleClose} saveBtnClick={onSaveBtnClick} hide={handleClose}/>
+      <ReactBootstrapModal title='Test Modal' body="Wow it's a nextjs react-bootstrap modal" show={show} closeModal={handleClose} saveBtnClick={onSaveBtnClick} hide={handleClose}/>
 
     </>
   );
